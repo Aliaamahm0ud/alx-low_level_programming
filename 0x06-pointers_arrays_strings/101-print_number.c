@@ -4,7 +4,7 @@
  * print_number - prints an integer;
  * @n: integer to be printed;
  */
-void print_number(int n);
+
 void print_number(int n)
 {
 	int temp
@@ -21,8 +21,8 @@ void print_number(int n)
 		n1 = n;
 	}
         temp=n1/10;
-	if (temp)
-		print_number(temp);
-
+	if (n1/10)
+		print_number(n1/10);
+	else
 	putchar((n1 % 10) + '0');
 }
