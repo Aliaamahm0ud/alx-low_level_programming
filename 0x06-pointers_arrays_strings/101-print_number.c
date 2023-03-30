@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * print_number - prints an integer;
+ * @n: integer to be printed;
  */
 void print_number(int n);
 void print_number(int n)
@@ -11,10 +10,12 @@ void print_number(int n)
 	unsigned int n1;
 
 	if (n < 0)
+		
 	{
-		n1 = -n;
+		n1 =n*(-1);
 		_putchar('-');
-	} else
+	}
+      	else
 	{
 		n1 = n;
 	}
