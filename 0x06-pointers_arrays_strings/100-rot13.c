@@ -6,6 +6,7 @@
  *
  * Return: the resulting string
  */
+char *rot13(char *);
 char *rot13(char *s)
 {
 	int i, j;
@@ -17,7 +18,7 @@ char *rot13(char *s)
 	{
 		for (j = 0; a[j] != '\0'; j++)
 		{
-			if (s[i] == a[j])
+			if (rot[i] == a[j])
 			{
 				s[i] = b[j];
 				break;
