@@ -1,4 +1,5 @@
 #include "main.h"
+#include "math.h"
 
 /**
  * print_number - prints an integer;
@@ -7,7 +8,7 @@
 
 void print_number(int n)
 {
-	int temp
+	int temp;
 	unsigned int n1;
 
 	if (n < 0)
@@ -23,6 +24,6 @@ void print_number(int n)
         temp=n1/10;
 	if (n1/10)
 		print_number(n1/10);
-	else
+	
 	putchar((n1 % 10) + '0');
 }
