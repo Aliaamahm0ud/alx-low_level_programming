@@ -1,50 +1,33 @@
-#include "main.h"
 #include <stdlib.h>
-/**
-  *argstostr - concatenates all arguments of the program.
-  *@ac: argument count.
-  *@av: pointer to array of size ac.
-  *Return: NULL if ac == 0 or av == null, Pointer to new string.
-  *NULL on fail.
-  */
-char *argstostr(int ac, char **av)
-{
-	int i, j, k, size;
-	char *arg;
+#include "main.h"
 
-	size = 0;
-	k = 0;
-	if (ac == 0 || av == NULL)
-		return (NULL);
+/**
+ * *_strdup - copies the string given as parameter
+ * @str: string to duplicate
+ *
+ * Return: pointer to the copied string (Success), NULL (Error)
+ */
+char *_strdup(char *str)
+{
+	char *dup;
+	unsigned int i, len;
+
 	i = 0;
-	while (i < ac)
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			size++;
-			j++;
-		}
-		size++;
-		i++;
-	}
-	arg = malloc((sizeof(char) * size) + 1);
-	if (arg == NULL)
+	len = 0;
+
+	if (str == NULL)
 		return (NULL);
-	i = 0;
-	while (i < ac)
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			arg[k] = av[i][j];
-			j++;
-			k++;
-		}
-		arg[k] = '\n';
-		k++;
+
+	while (str[len])
+		len++;
+
+	dup = malloc(sizeof(char) * (len + 1));
+
+	if (dup == NULL)
+		return (NULL);
+
+	while ((dup[i] = str[i]) != '\0')
 		i++;
-	}
-	arg[k] = '\0';
-	return (arg);
+
+	return (dup);
 }
